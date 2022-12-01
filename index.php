@@ -1,9 +1,9 @@
 <?php
 include 'db.php';
 session_start();
-if ($_SESSION['status_login'] != true) {
-  echo '<script>window.location="login.php"</script>';
-}
+// if ($_SESSION['status_login'] != true) {
+//   echo '<script>window.location="login.php"</script>';
+// }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,8 +12,8 @@ if ($_SESSION['status_login'] != true) {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Glamora Beauty Skin</title>
-  <!-- Google Font -->
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Bootstrap Icon -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 
   <!-- Bootstrap CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
@@ -31,11 +31,16 @@ if ($_SESSION['status_login'] != true) {
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <form class="d-flex" role="search">
+          <input class="form-control me-2" type="search" placeholder="Cari Produk" aria-label="Search">
+          <button class="btn btn-light" type="submit"><i class="bi bi-search"></i></button>
+        </form>
         <div class="navbar-nav ms-auto">
           <a class="nav-link active" aria-current="page" href="index.php">Dashboard</a>
-          <a class="nav-link" href="data-kategori.php">Data Kategori</a>
-          <a class="nav-link" href="data-produk.php">Data Produk</a>
-          <a class="nav-link" href="logoutadmin.php">keluar</a>
+          <a class="nav-link active" href="data-kategori.php">Data Kategori</a>
+          <a class="nav-link active" href="data-produk.php">Data Produk</a>
+          <a class="nav-link active" href="logoutadmin.php">keluar</a>
+
         </div>
       </div>
     </div>
@@ -43,17 +48,17 @@ if ($_SESSION['status_login'] != true) {
   <!-- Akhir Navbar -->
 
   <!-- Awal Carousel -->
-  <section class="container mt-5">
-    <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel ">
-      <div class="carousel-inner">
-        <div class="carousel-item ">
-          <img src="asset/foto/foto4.jpg" class="d-block img-fluid" alt="...">
-        </div>
-        <div class="carousel-item">
+  <div class="container">
+    <div id="carouselExampleControls" class="carousel slide mt-5" data-bs-ride="carousel">
+      <div class="carousel-inner mx-auto">
+        <div class="carousel-item active">
           <img src="asset/foto/foto5.jpg" class="d-block img-fluid" alt="...">
         </div>
         <div class="carousel-item">
-          <img src="asset/foto/foto8.JPG" class="d-block img-fluid" alt="...">
+          <img src="asset/foto/foto4.jpg" class="d-block img-fluid" alt="...">
+        </div>
+        <div class="carousel-item">
+          <img src="asset/foto/foto8.jpg" class="d-block img-fluid" alt="...">
         </div>
       </div>
       <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
@@ -65,7 +70,7 @@ if ($_SESSION['status_login'] != true) {
         <span class="visually-hidden">Next</span>
       </button>
     </div>
-  </section>
+  </div>
 
   <!-- Jumbotron -->
   <section class="jumbotron text-center">
@@ -81,7 +86,7 @@ if ($_SESSION['status_login'] != true) {
   <!-- Footer -->
   <footer>
     <div class="container text-center ">
-      <small>Copyright &copy; 2021 Glamora Beauty Skin.</small>
+      <small>Copyright &copy; 2022 Glamora Beauty Skin.</small>
     </div>
   </footer>
 
@@ -93,9 +98,9 @@ if ($_SESSION['status_login'] != true) {
 </html>
 
 <style>
-  body {
-    background-image: url(bg10.jpg);
+  /* body {
+    background-image: url(asset/bg10.jpg);
     background-size: cover;
     background-repeat: no-repeat;
-  }
+  } */
 </style>

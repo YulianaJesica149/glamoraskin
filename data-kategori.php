@@ -24,6 +24,19 @@ include 'db.php';
 </head>
 
 <body>
+    <!-- header -->
+    <header>
+        <div class="container">
+            <h1><a href="dashboard.php">Glamora Beauty Skin</a></h1>
+            <ul>
+                <li><a href="dashboard.php">Dashboard</a></li>
+                <li><a href="data-kategori.php">Data Kategori</a></li>
+                <li><a href="data-produk.php">Data Produk</a></li>
+                <li><a href="data-pembelian.php">Data Pembelian</a></li>
+                <li><a href="keluar.php">Keluar</a></li>
+            </ul>
+        </div>
+    </header>
 
     <!-- content -->
     <div class="section">
@@ -77,28 +90,13 @@ include 'db.php';
 
 <style>
     body {
-        background-image: url(bg1.jpg);
+        background-image: url(asset/bg11.jpg);
         background-size: cover;
         background-repeat: no-repeat;
     }
 
-    .box {
-        background-color: rgba(255, 255, 255, 0.10);
-        border-image: none;
-        box-sizing: border-box;
-        padding: 15px;
-        margin: 10px 0 25px 0;
-    }
-
-    header {
-        background-color: #bc8ac2;
-        color: #fff;
-    }
-
     .btn {
         padding: 8px 15px;
-        background-color: #bc8ac2;
-        color: #fff;
         border: none;
         cursor: pointer;
     }

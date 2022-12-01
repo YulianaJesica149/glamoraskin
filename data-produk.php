@@ -24,7 +24,9 @@ include 'db.php';
 </head>
 
 <body>
-    <div class="container">
+
+
+    <div class="container table-responsive">
         <!-- Awal Card -->
         <div class="card mt-3">
             <div class="card-header" style="background-color: #bc8ac2;">
@@ -32,13 +34,14 @@ include 'db.php';
             </div>
             <div class="card-body">
                 <!-- Button trigger modal -->
-                <button type="button" class="btn btn-success mb-3" data-bs-toggle="modal" data-bs-target="#modalTambah">
+                <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#modalTambah">
                     Tambah Data
                 </button>
 
-                <table class="table table-bordered table-hover text-center">
+                <table class="table table-bordered table-hover text-center table-striped table-sm">
                     <tr>
                         <th scope="col">No</th>
+                        <th scope="col">Kode Produk</th>
                         <th scope="col">Kategori</th>
                         <th scope="col">Nama Produk</th>
                         <th scope="col">Harga</th>
@@ -55,6 +58,7 @@ include 'db.php';
                     ?>
                             <tr>
                                 <td><?php echo $no++ ?></td>
+                                <td><?php echo $row['code_product'] ?></td>
                                 <td><?php echo $row['category_name'] ?></td>
                                 <td><?php echo $row['product_name'] ?></td>
                                 <td>Rp. <?php echo number_format($row['product_price']) ?></td>
@@ -79,7 +83,7 @@ include 'db.php';
                     <div class="modal-dialog">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Form Data Produk</h1>
+                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Tambah Data Produk</h1>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
                             <form method="POST" action="tambah-data.php" enctype="multipart/form-data">
@@ -135,7 +139,7 @@ include 'db.php';
 
 <style>
     body {
-        background-image: url(bg10.jpg);
+        background-image: url(asset/bg10.jpg);
         background-size: cover;
         background-repeat: no-repeat;
     }
