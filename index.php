@@ -19,7 +19,7 @@ session_start();
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
 
   <!-- My CSS -->
-  <link rel="stylesheet" type="text/css" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
@@ -39,7 +39,8 @@ session_start();
           <a class="nav-link active" aria-current="page" href="index.php">Dashboard</a>
           <a class="nav-link active" href="data-kategori.php">Data Kategori</a>
           <a class="nav-link active" href="data-produk.php">Data Produk</a>
-          <a class="nav-link active" href="logoutadmin.php">keluar</a>
+          <a class="nav-link active" href="data-pembelian.php">Data Pembelian</a>
+          <a class="nav-link active" href="logoutadmin.php">Keluar</a>
 
         </div>
       </div>
@@ -48,7 +49,7 @@ session_start();
   <!-- Akhir Navbar -->
 
   <!-- Awal Carousel -->
-  <div class="container">
+  <div class="container mt-5">
     <div id="carouselExampleControls" class="carousel slide mt-5" data-bs-ride="carousel">
       <div class="carousel-inner mx-auto">
         <div class="carousel-item active">
@@ -84,9 +85,13 @@ session_start();
   </section>
 
   <!-- Footer -->
-  <footer>
-    <div class="container text-center ">
-      <small>Copyright &copy; 2022 Glamora Beauty Skin.</small>
+  <footer class="bg-light p-2 mt-5">
+    <div class="container text text-center">
+      <div class="row">
+        <div class="col">
+          <small>Copyright &copy; 2022 Glamora Beauty Skin.</small>
+        </div>
+      </div>
     </div>
   </footer>
 

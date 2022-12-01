@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
 
     <!-- My CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
 <body>
@@ -53,15 +53,79 @@
         </div>
     </nav>
     <!-- Akhir Navbar -->
-    <!-- Card Kategori -->
-    <div class="card" style="width: 8rem;">
-        <img src="asset/img/gambar.png" class="card-img-top " alt="Sunscreen">
-        <div class="card-body ">
-            <a href="#" class="btn btn-light">Sunscreen</a>
+    <!-- Awal category -->
+    <div class="container">
+        <div class="judul-category mt-5">
+            <h5>Kategori</h5>
+        </div>
+        <div class="row text-center row-container mt-3 p-0">
+            <div class="col-lg-2 col-md-3 col-sm-4 col-5 me-3 ms-3">
+                <div class="menu-category">
+                    <a href="#"><img src="asset/img/gambar.png" class="img-category mt-3"></a>
+                    <p class="mt-1 text-dark text-center"><strong>Sunscreen</strong></p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-5 me-3 ms-2">
+                <div class="menu-category">
+                    <a href="#"><img src="asset/img/gambar.png" class="img-category mt-3"></a>
+                    <p class="mt-1 text-dark"><strong>Moisturizer</strong></p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-5 me-3 ms-2">
+                <div class="menu-category">
+                    <a href="#"><img src="asset/img/gambar.png" class="img-category mt-3"></a>
+                    <p class="mt-1 text-dark"><strong>Mask</strong></p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-5 me-3 ms-2">
+                <div class="menu-category">
+                    <a href="#"><img src="asset/img/gambar.png" class="img-category mt-3"></a>
+                    <p class="mt-1 text-dark"><strong>Cleanser</strong></p>
+                </div>
+            </div>
+            <div class="col-lg-2 col-md-3 col-sm-4 col-5 me-3 ms-2">
+                <div class="menu-category">
+                    <a href="#"><img src="asset/img/gambar.png" class="img-category mt-3"></a>
+                    <p class="mt-1 text-dark"><strong>Treatment</strong></p>
+                </div>
+            </div>
         </div>
     </div>
-    <!-- Bootstrap js  -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+    </div>
+    <!-- Akhir category -->
+    <!-- Detail Produk -->
+    <!-- <div class="container">
+        <div class="row">
+            <div class="col-lg-2 col-md-2 col-sm-4 col 4">
+                <div class="card">
+                    <img src="asset/produk/ <?php echo $p->product_image ?>" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title <?php echo $p->product_name ?>"></h5>
+                        <h3> Rp. <?php echo number_format($p->product_price) ?></h3>
+                        <p class="card-text"> Rp. <?php echo number_format($p->product_price) ?></p>
+                        <a href="detail.php" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+    <!-- Akhir Produk -->
+
+    <!-- footer -->
+    <br>
+    <footer class="bg-light p-2 mt-5">
+        <div class="container text text-center">
+            <div class="row">
+                <div class="col">
+                    <small>Copyright &copy; 2022 Glamora Beauty Skin.</small>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+<!-- Bootstrap js  -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 </body>
 
 </html>
