@@ -18,28 +18,6 @@ if (!isset($_SESSION)) {
     <title>Glamora | Checkout</title>
     <link rel="stylesheet" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-
-    <style>
-        body {
-            background-image: url(bg3.jpg);
-            background-size: cover;
-            background-repeat: no-repeat;
-        }
-
-        header {
-            background-color: #bc8ac2;
-            color: #fff;
-        }
-
-        .btn {
-            padding: 8px 15px;
-            background-color: #bc8ac2;
-            color: #fff;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
-
 </head>
 
 <body>
@@ -161,7 +139,7 @@ if (!isset($_SESSION)) {
         <br>
 
         <input type="submit" name="checkout" value="I Agree and Check Out" \>
-        <input type="button" name="batal" value="Batal" onclick="window.location.replace('index.php')">
+        <input type="button" name="batal" value="Batal" onclick="window.location.replace('dashboard.php')">
         </div>
         </form>
     </center>
@@ -182,7 +160,7 @@ if (!isset($_SESSION)) {
         unset($_SESSION['keranjang']);
 
         echo "<script>alert('Pembelian Sukses');</script>";
-        echo "<script>location='index.php?id=$id_user';</script>";
+        echo "<script>location='dashboard.php?id=$id_user';</script>";
     }
     ?>
     </div>

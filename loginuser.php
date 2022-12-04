@@ -5,12 +5,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login | Glamora Beauty Skin</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-
-    <!-- My CSS -->
-    <link rel="stylesheet" href="css/dashboard.css">
 </head>
 
 <body id="bg-login">
@@ -18,16 +14,18 @@
         <h2>Login User</h2>
         <form action="" method="POST">
             <input type="text" name="user" placeholder="Username" autocomplete="off" class="input-control">
-            <input type="password" name="pass" placeholder="Password" autocomplete="off" class="input-control text-center">
-            <tr>
-                <td colspan="2" align="center"><input type="checkbox" name="remember" id="remember">Remember me</td>
-            </tr>
+            <input type="password" name="pass" placeholder="Password" autocomplete="off" class="input-control">
+            <center>
+                <tr>
+                    <td colspan="2" align="center"><input type="checkbox" name="remember" id="remember">Remember me</td>
+                </tr>
 
-            <br>
-            <input type="submit" name="submit" value="Login" autocomplete="off" class="btn">
-            <input type="submit" name="register" value="Registrasi" autocomplete="off" class="btn">
-            <input type="submit" name="admin" value="Login Admin" class="btn">
-            </br>
+                <br>
+                <input type="submit" name="submit" value="Login" autocomplete="off" class="btn">
+                <input type="submit" name="register" value="Registrasi" autocomplete="off" class="btn">
+                <input type="submit" name="admin" value="Login Admin" class="btn">
+                </br>
+            </center>
         </form>
         <?php
         if (isset($_POST['submit'])) {

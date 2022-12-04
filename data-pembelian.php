@@ -39,7 +39,6 @@ if ($_SESSION['status_login'] != true) {
                     <a class="nav-link active" aria-current="page" href="index.php">Dashboard</a>
                     <a class="nav-link active" href="data-kategori.php">Data Kategori</a>
                     <a class="nav-link active" href="data-produk.php">Data Produk</a>
-                    <a class="nav-link active" href="data-pembelian.php">Data Pembelian</a>
                     <a class="nav-link active" href="logout.php">Keluar</a>
 
                 </div>

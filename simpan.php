@@ -61,7 +61,7 @@ if ($_SESSION['status_login'] != true) {
     <!-- footer -->
     <footer>
         <div class="container">
-            <small>Copyright &copy; 2021 Glamora Beauty Skin</small>
+            <small>Copyright &copy; 2022 Glamora Beauty Skin</small>
         </div>
     </footer>
 </body>
