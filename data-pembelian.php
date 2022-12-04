@@ -1,9 +1,9 @@
 <?php
 session_start();
 include 'db.php';
-// if ($_SESSION['status_login'] != true) {
-//     echo '<script>window.location="login.php"</script>';
-// }
+if ($_SESSION['status_login'] != true) {
+    echo '<script>window.location="login.php"</script>';
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -40,10 +40,73 @@ include 'db.php';
                     <a class="nav-link active" href="data-kategori.php">Data Kategori</a>
                     <a class="nav-link active" href="data-produk.php">Data Produk</a>
                     <a class="nav-link active" href="data-pembelian.php">Data Pembelian</a>
-                    <a class="nav-link active" href="logoutadmin.php">Keluar</a>
+                    <a class="nav-link active" href="logout.php">Keluar</a>
 
                 </div>
             </div>
         </div>
     </nav>
     <!-- Akhir Navbar -->
+
+    <!-- content -->
+    <?php
+    require 'db.php';
+    echo "
+        <br><br><br><br>
+        <center>
+        <table border=1>
+            <tr>
+                <th>No</th>
+                <th>Id User</th>
+                <th>Kode Order</th>
+                <th>Tanggal Pembelian</th>
+                <th>Total Pembelian</th>
+                <th>Status</th>";
+    $qry = mysqli_query($conn, "SELECT id_user, kode_order, tanggal_pembelian, total_pembelian, status FROM tb_pembelian ORDER BY id_pembelian Asc");
+    $no = 1;
+    while ($data = mysqli_fetch_array($qry)) {
+        echo "<tr>
+                        <td>$no</td>
+                        <td>$data[id_user]</td>
+                        <td>$data[kode_order]</td>
+                        <td>$data[tanggal_pembelian]</td>
+                        <td>$data[total_pembelian]</td>
+                        <td>$data[status]</td>
+                    </tr>";
+        $no++;
+    }
+    echo "</table>";
+    ?>
+    </center>
+</body>
+
+</html>
+
+<style>
+    body {
+        background-image: url(bg1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+
+    .box {
+        background-color: rgba(255, 255, 255, 0.10);
+        border-image: none;
+        box-sizing: border-box;
+        padding: 15px;
+        margin: 10px 0 25px 0;
+    }
+
+    header {
+        background-color: #bc8ac2;
+        color: #fff;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        background-color: #bc8ac2;
+        color: #fff;
+        border: none;
+        cursor: pointer;
+    }
+</style>

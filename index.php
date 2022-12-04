@@ -1,9 +1,9 @@
 <?php
 include 'db.php';
 session_start();
-// if ($_SESSION['status_login'] != true) {
-//   echo '<script>window.location="login.php"</script>';
-// }
+if ($_SESSION['status_login'] != true) {
+  echo '<script>window.location="login.php"</script>';
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,16 +31,12 @@ session_start();
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Cari Produk" aria-label="Search">
-          <button class="btn btn-light" type="submit"><i class="bi bi-search"></i></button>
-        </form>
         <div class="navbar-nav ms-auto">
           <a class="nav-link active" aria-current="page" href="index.php">Dashboard</a>
           <a class="nav-link active" href="data-kategori.php">Data Kategori</a>
           <a class="nav-link active" href="data-produk.php">Data Produk</a>
           <a class="nav-link active" href="data-pembelian.php">Data Pembelian</a>
-          <a class="nav-link active" href="logoutadmin.php">Keluar</a>
+          <a class="nav-link active" href="logout.php">Keluar</a>
 
         </div>
       </div>

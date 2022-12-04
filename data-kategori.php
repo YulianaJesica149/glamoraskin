@@ -1,9 +1,9 @@
 <?php
-// session_start();
+session_start();
 include 'db.php';
-// if ($_SESSION['status_login'] != true) {
-//     echo '<script>window.location="login.php"</script>';
-// }
+if ($_SESSION['status_login'] != true) {
+    echo '<script>window.location="login.php"</script>';
+}
 ?>
 <!DOCTYPE html>
 <html>
@@ -35,16 +35,12 @@ include 'db.php';
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Cari Produk" aria-label="Search">
-                    <button class="btn btn-light" type="submit"><i class="bi bi-search"></i></button>
-                </form>
                 <div class="navbar-nav ms-auto">
                     <a class="nav-link active" aria-current="page" href="index.php">Dashboard</a>
                     <a class="nav-link active" href="data-kategori.php">Data Kategori</a>
                     <a class="nav-link active" href="data-produk.php">Data Produk</a>
                     <a class="nav-link active" href="data-pembelian.php">Data Pembelian</a>
-                    <a class="nav-link active" href="logoutadmin.php">Keluar</a>
+                    <a class="nav-link active" href="logout.php">Keluar</a>
 
                 </div>
             </div>
@@ -89,7 +85,7 @@ include 'db.php';
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header" style="background-color: #bc8ac2;">
-                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Data Produk</h1>
+                                            <h1 class="modal-title fs-5" id="staticBackdropLabel">Edit Data Kategori</h1>
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <form method="POST" action="aksi-kategori.php">

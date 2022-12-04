@@ -1,9 +1,9 @@
 <?php
 session_start();
 include 'db.php';
-// if ($_SESSION['status_login'] != true) {
-//     echo '<script>window.location="login.php"</script>';
-// }
+if ($_SESSION['status_login'] != true) {
+    echo '<script>window.location="login.php"</script>';
+}
 ?>
 <!doctype html>
 <html lang="en">
@@ -44,7 +44,7 @@ include 'db.php';
                     <a class="nav-link active" href="data-kategori.php">Data Kategori</a>
                     <a class="nav-link active" href="data-produk.php">Data Produk</a>
                     <a class="nav-link active" href="data-pembelian.php">Data Pembelian</a>
-                    <a class="nav-link active" href="logoutadmin.php">Keluar</a>
+                    <a class="nav-link active" href="logout.php">Keluar</a>
 
                 </div>
             </div>
@@ -90,7 +90,7 @@ include 'db.php';
                                 <td><a href="asset/produk/<?php echo $row['product_image'] ?>" target="_blank"> <img src="asset/produk/<?php echo $row['product_image'] ?>" width="50px"> </a></td>
                                 <td><?php echo ($row['product_status'] == 0) ? 'Tidak Aktif' : 'Aktif'; ?></td>
                                 <td>
-                                    <a href="proses-ubah.php" data-bs-toggle="modal" data-bs-target="#modalEdit<?= $no ?>" class="btn btn-warning">Edit</a>
+                                    <a href="aksi-produk.php" data-bs-toggle="modal" data-bs-target="#modalEdit<?= $no ?>" class="btn btn-warning">Edit</a>
                                     <a href="proses-hapus.php ?idp=<?php echo $row['product_id'] ?>" onclick="return confirm('Yakin ingin hapus ?')" class="btn btn-danger">Hapus</a>
 
                                 </td>

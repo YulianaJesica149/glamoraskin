@@ -16,7 +16,7 @@ body {
 }
 
 .img-category:hover {
-  transform: scale(1.2);
+  transform: scale(0.5);
   transition: (0.2s);
 }
 
@@ -26,3 +26,6 @@ body {
 }
 
 /* akhir style kategori */
+
+.input-cari {
+}

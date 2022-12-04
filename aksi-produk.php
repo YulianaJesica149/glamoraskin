@@ -7,8 +7,8 @@ include 'db.php';
 if (isset($_POST['tambah-produk'])) {
 
     $kategori     = $_POST['kategori'];
-    $nama         = $_POST['namaproduk'];
-    $harga         = $_POST['hargaproduk'];
+    $nama         = $_POST['nama'];
+    $harga         = $_POST['harga'];
     $deskripsi     = $_POST['deskripsi'];
     $status     = $_POST['status'];
 
@@ -78,7 +78,7 @@ if (isset($_POST['edit-produk'])) {
         $type1 = explode('.', $filename);
         $type2 = $type1[1];
 
-        $newname = 'produk' . time() . '.' . $type2;
+        $newname = 'asset/produk' . time() . '.' . $type2;
 
         // menampung data format file yang diizinkan
         $tipe_diizinkan = array('jpg', 'jpeg', 'png', 'gif');

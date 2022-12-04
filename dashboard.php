@@ -1,3 +1,10 @@
+<?php
+session_start();
+if ($_SESSION['status_login'] != true) {
+    echo '<script>window.location="loginuser.php"</script>';
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -23,19 +30,23 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-                <form class="d-flex ms-auto my-4 my-lg-0" role="search">
-                    <input class="form-control me-1" type="search" placeholder="Cari Produk" aria-label="Search">
-                    <button class="btn btn-light" type="submit"><i class="bi bi-search"></i></button>
-                </form>
+                <div class="input-cari">
+                    <form class=" d-flex ms-auto my-4 my-lg-0" role="search">
+                        <input class="form-control me-1" type="search" placeholder="Cari Produk" aria-label="Search">
+                        <button class="btn btn-light" type="submit"><i class="bi bi-search">
+
+                            </i></button>
+                    </form>
+                </div>
                 <ul class="navbar-nav ms-auto mb-2 mb-lg-0 me-5">
                     <li class="nav-item me-4">
-                        <a class="nav-link active" aria-current="page" href="Dashboard.php">Beranda</a>
+                        <a class="nav-link active" aria-current="page" href="dashboard.php">Beranda</a>
                     </li>
                     <li class="nav-item me-4">
-                        <a class="nav-link active" href="#">Produk</a>
+                        <a class="nav-link active" href="produk.php">Produk</a>
                     </li>
                     <li class="nav-item me-4">
-                        <a class="nav-link active" href="#"><i class="bi bi-cart3">Cart</i></a>
+                        <a class="nav-link active" href="cart.php"><i class="bi bi-cart3">Cart</i></a>
                     </li>
                     <li class="nav-item dropdown  me-4">
                         <a class="nav-link active dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-expanded="false"><i class="bi bi-person-circle"></i></a>
@@ -56,37 +67,52 @@
     <!-- Awal category -->
     <div class="container">
         <div class="judul-category mt-5">
+            <?php
+            $kategori = mysqli_query($conn, "SELECT * FROM tb_category ORDER BY category_id DESC");
+            if (mysqli_num_rows($kategori) > 0) {
+                while ($k = mysqli_fetch_array($kategori)) {
+            ?>
+                    <a href="produk.php?kat=<?php echo $k['category_id'] ?>">
+                        <div class="col-5">
+                            <img src="asset/img/gambar.png" width="50px" style="margin-bottom:5px;">
+                            <p><?php echo $k['category_name'] ?></p>
+                        </div>
+                    </a>
+                <?php }
+            } else { ?>
+                <p>Kategori tidak ada</p>
+            <?php } ?>
             <h5>Kategori</h5>
         </div>
         <div class="row text-center row-container mt-3 p-0">
             <div class="col-lg-2 col-md-3 col-sm-4 col-5 me-3 ms-3">
                 <div class="menu-category">
                     <a href="#"><img src="asset/img/gambar.png" class="img-category mt-3"></a>
-                    <p class="mt-1 text-dark text-center"><strong>Sunscreen</strong></p>
+                    <p class="mt-2 text-dark text-center"><strong>Sunscreen</strong></p>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-5 me-3 ms-2">
                 <div class="menu-category">
                     <a href="#"><img src="asset/img/gambar.png" class="img-category mt-3"></a>
-                    <p class="mt-1 text-dark"><strong>Moisturizer</strong></p>
+                    <p class="mt-2 text-dark"><strong>Moisturizer</strong></p>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-5 me-3 ms-2">
                 <div class="menu-category">
                     <a href="#"><img src="asset/img/gambar.png" class="img-category mt-3"></a>
-                    <p class="mt-1 text-dark"><strong>Mask</strong></p>
+                    <p class="mt-2 text-dark"><strong>Mask</strong></p>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-5 me-3 ms-2">
                 <div class="menu-category">
                     <a href="#"><img src="asset/img/gambar.png" class="img-category mt-3"></a>
-                    <p class="mt-1 text-dark"><strong>Cleanser</strong></p>
+                    <p class="mt-2 text-dark"><strong>Cleanser</strong></p>
                 </div>
             </div>
             <div class="col-lg-2 col-md-3 col-sm-4 col-5 me-3 ms-2">
                 <div class="menu-category">
                     <a href="#"><img src="asset/img/gambar.png" class="img-category mt-3"></a>
-                    <p class="mt-1 text-dark"><strong>Treatment</strong></p>
+                    <p class="mt-2 text-dark"><strong>Treatment</strong></p>
                 </div>
             </div>
         </div>
@@ -111,6 +137,7 @@
     </div> -->
 
     <!-- Akhir Produk -->
+    <!-- Seacrh -->
 
     <!-- footer -->
     <br>
